@@ -2,32 +2,33 @@
 
 /**
 * insert_recursion - inserts a value in a Binary Search Tree
+* @tree: the tree
 * @value: the value
 *
 * Return: pointer to a bst_t
 */
 bst_t *insert_recursion(bst_t *tree, int value)
 {
-        if (tree == NULL)
-                return (NULL);
+	if (tree == NULL)
+		return (NULL);
 
-        if (value < tree->n)
-        {
-                if (tree->left != NULL)
-                        return (insert_recursion(tree->left, value));
-                else
-                        return (tree);
-        }
+	if (value < tree->n)
+	{
+		if (tree->left != NULL)
+			return (insert_recursion(tree->left, value));
+		else
+			return (tree);
+	}
 
-        else if (value > tree->n)
-        {
-                if (tree->right != NULL)
-                        return (insert_recursion(tree->right, value));
-                else
-                        return (tree);
-        }
+	else if (value > tree->n)
+	{
+		if (tree->right != NULL)
+			return (insert_recursion(tree->right, value));
+		else
+			return (tree);
+	}
 
-        return (NULL);
+	return (NULL);
 }
 
 /**
